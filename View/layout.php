@@ -56,12 +56,12 @@
                 >
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link fw-medium" href="<?php Url::getUrl("Base/whoWeAre")?>"
+                <a class="nav-link fw-medium" href="<?php Url::getUrl("Base/index#who");?>"
                   >Qui sommes nous?</a
                 >
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link fw-medium" href="?action=home#contact"
+                <a class="nav-link fw-medium" href="<?php Url::getUrl("Base/index#contact");?>"
                   >Contactez-nous</a
                 >
               </li>
