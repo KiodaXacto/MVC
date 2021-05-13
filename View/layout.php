@@ -105,9 +105,9 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="../Public/js/app.js"></script>
     <script src="../Public/js/theme.js"></script>
-    <!--link
+    <link
       href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&amp;display=swap"
       rel="stylesheet"
-    /-->
+    >
   </body>
 </html>
