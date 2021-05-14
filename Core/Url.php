@@ -7,7 +7,7 @@ class Url {
     }
 
     static function link ($url = "Base/index"){
-        return "http://localhost/Projet_MVCSimple/".$url;
+        return BU."/".$url;
     }
 
 }

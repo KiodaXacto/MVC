@@ -10,8 +10,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <link href="../Public/Css/theme.css" rel="stylesheet" />
-    <link rel="../Public/Css/stylesheet.css" />
+    <link href="<?=BU?>/Public/Css/theme.css" rel="stylesheet" />
+    <link rel="<?=BU?>/Public/Css/stylesheet.css" />
     <title>ARPP</title>
   </head>
 
@@ -23,10 +23,10 @@
         data-navbar-on-scroll="data-navbar-on-scroll"
       >
         <div class="container">
-          <a class="navbar-brand" href="<?php Url::getUrl("Base/index")?>"
+          <a class="navbar-brand" href="<?php Url::getUrl("")?>"
             ><img
               class="d-inline-block align-top img-fluid"
-              src="../Public/images/logo.png"
+              src="<?=BU?>/public/images/logo.png"
               alt=""
               width="50"
             /><span class="text-theme font-monospace fs-4 ps-2">ARPP</span></a
@@ -51,7 +51,7 @@
                 <a
                   class="nav-link fw-medium active"
                   aria-current="page"
-                  href="<?php Url::getUrl("Base/index")?>"
+                  href="<?php Url::getUrl("Base/index#top")?>"
                   >Accueil</a
                 >
               </li>
@@ -99,12 +99,12 @@
       <?php echo $___Render_Curent_View;?>
     </main>
     <script src="https: //unpkg.com/micromodal/dist/micromodal.min.js"></script>
-    <script src="../Public/js/@popperjs/popper.min.js"></script>
-    <script src="../Public/js/bootstrap/bootstrap.min.js"></script>
-    <script src="../Public/js/is/is.min.js"></script>
+    <script src="<?=BU?>/Public/js/@popperjs/popper.min.js"></script>
+    <script src="<?=BU?>/Public/js/bootstrap/bootstrap.min.js"></script>
+    <script src="<?=BU?>/Public/js/is/is.min.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="../Public/js/app.js"></script>
-    <script src="../Public/js/theme.js"></script>
+    <script src="<?=BU?>/Public/js/app.js"></script>
+    <script src="<?=BU?>/public/js/theme.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;400;700;900&amp;display=swap"
       rel="stylesheet"
