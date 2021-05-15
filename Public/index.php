@@ -10,6 +10,7 @@
   require CORE.DS."Url.php";
   require CORE.DS."Request.php";
   require CORE.DS."App.php";
+  require CORE.DS."DataBase.php";
   require CORE.DS."Model.php";
   require CORE.DS."Controlleur.php";
 

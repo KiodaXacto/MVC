@@ -5,6 +5,7 @@ Class Request {
     var $controlleur = "Base";
     var $action = "index";
     var $params = [];
+    var $data = false;
 
     function __construct(){
         $this->url = isset($_SERVER["PATH_INFO"])?$_SERVER["PATH_INFO"]:"/";
@@ -20,6 +21,16 @@ Class Request {
             }
             $this->params = $aux;
         } 
+
+        if(!empty($_POST)){
+			$this->data = new stdClass();
+			foreach($_POST as $k => $v)
+				$this->data->$k = $v;
+            if(!empty($_FILES)){
+                foreach($_FILES as $k => $v)
+				    $this->data->$k = $v;
+            }
+		}
 
     }
 }

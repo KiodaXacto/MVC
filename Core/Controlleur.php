@@ -6,9 +6,6 @@ class Controlleur {
     function __construct($request){
         $this->request = $request;
     }
-     public function index(){
-         $this->model = new Model(); 
-     }
 
      public function render (){
          // vue
@@ -29,6 +26,17 @@ class Controlleur {
             echo " fichier n'existe pas ";
         }
      }
+
+     function redirect($url, $code = null){
+		if($code == 301){
+			header("HTTP/1.1 301 Moved Permanently");
+		}
+                    
+        //die(debug(Router::url("teacher/login")));
+        //die(BU.Url::getUrl($url));
+		header("location:http://localhost".Url::link($url));
+
+	}
     /*private static $instance;
     private static $dbInstance;
     private function __construct(){
