@@ -51,37 +51,46 @@
                 <a
                   class="nav-link fw-medium active"
                   aria-current="page"
-                  href="<?php Url::getUrl("Base/index#top")?>"
+                  href="<?=Url::link("Base/index#top");?>"
                   >Accueil</a
                 >
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link fw-medium" href="<?php Url::getUrl("Base/index#who");?>"
+                <a class="nav-link fw-medium" href="<?=Url::link("Base/index#who");?>"
                   >Qui sommes nous?</a
                 >
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link fw-medium" href="<?php Url::getUrl("Base/index#contact");?>"
+                <a class="nav-link fw-medium" href="<?=Url::link("Base/index#contact");?>"
                   >Contactez-nous</a
                 >
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link fw-medium" href="?action=formations"
+                <a class="nav-link fw-medium" href="<?=Url::link('Formations/index');?>"
                   >Formations</a
                 >
               </li>
               <li class="nav-item px-2">
                 <a class="nav-link fw-medium" href="?action=colloquia"
-                  >Collaques</a
-                >
+                  >Collaques</a>
               </li>
               <li class="nav-item px-2">
+                <a class="nav-link fw-medium" href="#">Donate</a>
+              </li>
+              <li class="nav-item px-2">
+                <?php if(!$s->loginVerification()): ?>
                 <a
                   class="nav-link fw-medium"
-                  href="?action=login"
+                  href="<?= Url::link("Base/login")?>"
                   id="admin-link"
-                  >Accès admin</a
-                >
+                  >Accès admin</a>
+                <?php else: ?>
+                  <a
+                  class="nav-link fw-medium"
+                  href="<?= Url::link("Base/logout")?>"
+                  id="admin-link"
+                  >Logout</a>
+                <?php endif; ?>
               </li>
               <li class="nav-item px-2" id="disconnect" style="display: none">
                 <a

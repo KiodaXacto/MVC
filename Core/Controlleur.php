@@ -7,12 +7,16 @@ class Controlleur {
         $this->request = $request;
     }
 
-     public function render (){
+     public function render ($vars = null){
+         if($vars)
+            extract($vars);
+
          // vue
          $view = VIEW.DS.$this->request->controlleur.DS.$this->request->action.".php";
          // layout
          $layout = VIEW.DS."layout.php";
          $data = $this->model;
+         $s = Session::loadSession();
 
          $___Render_Curent_View = "";
          
