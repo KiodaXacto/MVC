@@ -87,7 +87,8 @@
                                 <label for="Prix" class="text-grey">Prix</label>
                                 <input type="number" name="Prix" id="prix" placeholder="Prix" class="form-control">
                             </div>
-                            <label for="metier" class="text-grey">Type: </label>
+                            <div class="form-group mb-2">
+                                <label for="metier" class="text-grey">Type: </label>
                             </div>
                             <div class="form-check form-check-inline"> 
                               <input class="form-check-input" type="radio" name="TypeE" id="discussion" value="Café discussion">
@@ -106,9 +107,9 @@
                                 <textarea name="ContenuE" id="NbPersonneMax" placeholder="Details" class="form-control mb-5"></textarea>
                             </div>
                         </div>  
-                    </div>
                     <div class="modal-footer">
                         <input type="submit" class="btn btn-primary" value="Save"/>
+                    </div>
                     </div>
                 </div> 
             </form>

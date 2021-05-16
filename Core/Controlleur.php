@@ -41,44 +41,21 @@ class Controlleur {
 		header("location:http://localhost".Url::link($url));
 
 	}
-    /*private static $instance;
-    private static $dbInstance;
-    private function __construct(){
-    }
 
-    public function getInstance(){
-        if(is_null(self::$instance)){
-            self::$instance = new Core();
+    protected function validateFileToUpload($file){
+        extract($file);
+        $nameParts = explode(".",$name);
+        $fileExt = strtolower(end($nameParts));
+        $allorwedFiles = array('pdf');//si demain on veut autriser un autre type de fichier 
+        $path = null;
+        if(in_array($fileExt,$allorwedFiles) && $error === 0 && $size <= 600000){
+            $uniqueName = uniqid('',true).".{$fileExt}";
+            $path = array();
+            $path["name"] = $name;
+            $path["from"] =  $tmp_name;
+            $path["to"] = $nameParts[0]."_".$uniqueName;
         }
-        return self::$instance;
+        return $path;
     }
-
-    public static function gatherAllInformationIndex(){
-      
-        $res =  Model::gatherAllInformationIndex();
-		foreach($res as $r){
-            echo $r;
-        }
-    } 
-
-    public static function updateEvent(){
-        if (empty ($_POST['TitreE']) OR empty ($_POST['ContenuE']) )
-        {
-            die ('Veuillez remplir le formulaire pour poster votre évenement');
-        }
-        $numE=$_POST['numE'];
-        $TitreE=$_POST['TitreE'];
-        $DateE=$_POST['DateE'];
-        $ContenuE=$_POST['ContenuE'];
-        $Prix=$_POST['Prix'];
-        $TypeE=$_POST['TypeE'];
-        
-        echo Model::updateEvent($TitreE,$ContenuE,$DateE,$Prix,$TypeE,$numE);
-    }
-    public static function Delete() {
-    
-        echo Model::Delete($num);
-		
-    }*/
 }
 ?>

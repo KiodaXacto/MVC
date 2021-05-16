@@ -65,4 +65,10 @@ class Base extends Controlleur {
         }
     }
 
+    public function FAQ(){
+        $model = new Model("faq","IdQuestion");
+        $model->getAll();
+        $this->model = $model;
+    }
+
 }

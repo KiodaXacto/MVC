@@ -67,15 +67,19 @@
               </li>
               <li class="nav-item px-2">
                 <a class="nav-link fw-medium" href="<?=Url::link('Formations/index');?>"
-                  >Formations</a
+                  >Formations</a>
                 >
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link fw-medium" href="?action=colloquia"
-                  >Collaques</a>
+                <a class="nav-link fw-medium" href="<?=Url::link('Evenements/index');?>"
+                  >Evenements</a>
               </li>
               <li class="nav-item px-2">
-                <a class="nav-link fw-medium" href="#">Donate</a>
+                <a class="nav-link fw-medium" href="<?=Url::link('Base/FAQ');?>"
+                  >FAQ</a>
+              </li>
+              <li class="nav-item px-2">
+                <a class="nav-link fw-medium" href="#">Donation</a>
               </li>
               <li class="nav-item px-2">
                 <?php if(!$s->loginVerification()): ?>

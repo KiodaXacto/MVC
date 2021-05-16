@@ -39,7 +39,11 @@ class Formations extends Controlleur {
         $files =  new Model("fichier","id");
         $files->exec("select * from fichier where formation = {$id}");
         $model->files = $files->list;
+        $members = new Model("inscritf","id");
+        $members->exec("select * from inscritf join membre on inscritf.IdMembre = membre.IdMembre where inscritf.IdFormation = {$id}");
+        $model->members = $members->list;
         
+
         if($this->request->data){
         /*echo "<pre>";
         print_r($this->request);
@@ -87,22 +91,6 @@ class Formations extends Controlleur {
         $this->redirect("Formations/details/".$formation);
     }
 
-    private function validateFileToUpload($file){
-        extract($file);
-        $nameParts = explode(".",$name);
-        $fileExt = strtolower(end($nameParts));
-        $allorwedFiles = array('pdf');//si demain on veut autriser un autre type de fichier 
-        $path = null;
-        if(in_array($fileExt,$allorwedFiles) && $error === 0 && $size <= 600000){
-            $uniqueName = uniqid('',true).".{$fileExt}";
-            $path = array();
-            $path["name"] = $name;
-            $path["from"] =  $tmp_name;
-            $path["to"] = $nameParts[0]."_".$uniqueName;
-        }
-        return $path;
-    }
-
     public function register (){
         $membre = new Model("membre","IdMembre");
         $linkToFormation = new Model("inscritf","id");
@@ -136,7 +124,14 @@ class Formations extends Controlleur {
             if(count($partsKey)<=1)
                 $data[$k] = $v;
             else $dataInscrit[end($partsKey)] = $v;
-        } 
+        }
+        
+        if(!filter_var($data["Mail"],FILTER_VALIDATE_EMAIL)){
+            $s = Session::loadSession();
+            $s->setFlash("Email invalide","danger");
+            $this->redirect("Formations/details/{$IdFormation}");
+            die();
+        }
 
 
         if($IdMembre)$data["IdMembre"]  = $IdMembre ;
