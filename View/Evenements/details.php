@@ -226,6 +226,7 @@
     </div>
     <?php endif;?>
 </section>
+<?php if($s->loginVerification()):?>
 <section class="py-0 mb-6" id="header">
     <div class="container">
         <div class="row align-items-center">
@@ -283,3 +284,4 @@
         </div>
     </div>
 </section>
+<?php endif;?>
