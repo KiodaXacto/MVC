@@ -8,7 +8,7 @@ class App {
         $this->request= new Request(); 
         $this->session = Session::loadSession(); 
         
-        //try {
+        try {
             $controlleur = $this->LoadControlleur();
             ////si l'action/Methode n'existe pas on provoque une erreur type page introuvable
             if(!in_array($this->request->action,array_diff(get_class_methods($controlleur),get_class_methods(get_parent_class($controlleur))))){
@@ -17,10 +17,10 @@ class App {
         
             call_user_func_array(array($controlleur,$this->request->action),$this->request->params);
             $controlleur->render();
-        /*} catch (\Throwable $th) {
+        } catch (\Throwable $th) {
             $this->Errors->index();
             
-        }*/
+        }
 
     }
 
